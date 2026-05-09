@@ -5,13 +5,13 @@ app = Flask(__name__)
 
 def get_db():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",  # unnoda password
-        database="college_bus"
+        host="sql7.freesqldatabase.com",
+        user="sql7825905",
+        password="48i1bgllVt",
+        database="sql7825905",
+        port=3306
     )
 
-# HTML Template
 HTML = '''
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@ HTML = '''
         tr:hover { background: #f5f5f5; }
         .count { font-size: 24px; color: #4CAF50; text-align: center; margin: 20px; }
     </style>
-    <meta http-equiv="refresh" content="30"> <!-- 30 sec auto refresh -->
+    <meta http-equiv="refresh" content="30">
 </head>
 <body>
     <h1>🚌 College Bus Entry Dashboard</h1>
@@ -81,4 +81,4 @@ def api_buses():
     } for e in entries])
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
